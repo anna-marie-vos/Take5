@@ -12,3 +12,6 @@ app.set('view engine', 'handlebars') //causes the render function to work
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
+
+
+module.exports = app
