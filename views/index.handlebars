@@ -18,14 +18,12 @@
         <th>Project Name</th>
         <th>Site Notifications</th>
       </tr>
+      {{#each projects}}
       <tr>
-        <td><a class="link" href="#">Rutherford House</a></td>
-        <td>Asbestos found in service shafts</td>
+        <td><a class="link" href="/{{project_id}}">{{}}</a></td>
+        <td>{{}}</td>
       </tr>
-      <tr>
-        <td><a class="link" href="#">WCC building 1</a></td>
-        <td>Heating pipes uninsulated</td>
-      </tr>
+      {{/each}}
     </table>
   </div>
 

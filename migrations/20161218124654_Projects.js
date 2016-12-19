@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('projects', function (table) {
     table.increments('project_id');
-    table.string('project_site');
+    table.string('project_name');
     table.string('location');
     table.string('SWMS');
     table.string('important_Notices');
