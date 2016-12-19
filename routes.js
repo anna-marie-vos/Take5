@@ -10,11 +10,11 @@ function getProjects (req, res) {
 
 function getProjectData(req, res){
   var ProjectID = Number(req.params.id)
-  
+
     db.listProjectData(ProjectID)
         .then(function(projectData){
             console.log(projectData)
-            res.render('projectData')
+            res.render('projectData',projectData[0])
         })
 }
 

@@ -9,6 +9,7 @@ function listAllProjects (){
 function listProjectData(projectID){
   return knex('projects')
   .select('*')
+  .where('project_id',projectID)
 }
 
 
