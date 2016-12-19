@@ -1,12 +1,9 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('ppeGear', function (table) {
-    table.increments('project_id');
-    table.string('project_site');
-    table.string('location');
-    table.string('SWMS');
-    table.string('required_PPE');
-    table.string('important_Notices');
+    table.increments('ppe_id');
+    table.string('ppe_name');
+    table.string('ppe_image');
   })
 };
 

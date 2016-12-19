@@ -5,12 +5,11 @@ exports.up = function(knex, Promise) {
     table.string('hazard');
     table.string('consequence');
     table.string('photos');
-    table.string('Existing_mitigation');
-    table.string('Future_mitigation');
+    table.string('existing_mitigation');
+    table.string('future_mitigation');
     table.string('add_notice');
     table.string('owner');
     table.string('liklihood');
-    table.string('consequence');
     table.boolean('eliminated');
   })
 };

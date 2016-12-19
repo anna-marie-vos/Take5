@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
     table.string('project_site');
     table.string('location');
     table.string('SWMS');
-    table.string('required_PPE');
     table.string('important_Notices');
   })
 };
