@@ -3,6 +3,7 @@ var expresshbs = require('express-handlebars')
 var path = require('path')
 var bodyParser = require('body-parser')
 var fs = require('fs')
+var routes = require('./routes')
 var app = express()
 
 // view engine setup
@@ -14,13 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 // stuff above are all setup type things
 
-app.get('/',function(req,res){
-  res.redirect('/index')
-})
-
-app.get('/index', function(req,res){
-  res.render('index')
-})
+app.get('/',routes.getProjects);
+app.get('/index', routes.getProjects);
 
 
 
