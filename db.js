@@ -6,8 +6,13 @@ function listAllProjects (){
   .select('*')
 }
 
+function listProjectData(projectID){
+  return knex('projects')
+  .select('*')
+}
 
 
 module.exports = {
   listAllProjects: listAllProjects,
+  listProjectData: listProjectData,
 }
