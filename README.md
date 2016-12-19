@@ -29,4 +29,4 @@ If you notice any workplace hazards you:
 
 11) the owner should be able to rate the risk priority
 
-12) the creator / contributor of a risk should be notified of any changes to a specific risk. 
+12) the creator / contributor of a risk should be notified of any changes to a specific risk.
