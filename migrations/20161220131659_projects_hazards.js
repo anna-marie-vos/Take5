@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments('Proj_haz_id');
     table.string('proj_id');
     table.string('haz_id');
+    table.string('services_id')
   })
 };
 

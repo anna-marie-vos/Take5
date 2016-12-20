@@ -9,17 +9,22 @@ function getProjects (req, res) {
 }
 
 function getProjectData(req, res){
-  var ProjectID = Number(req.params.id)
+  var projectID = Number(req.params.id)
 
-    db.listProjectData(ProjectID)
+    db.listProjectData(projectID)
         .then(function(projectData){
           res.render('projectData',{'projectData': projectData[0],'ppeData':projectData})
         })
 }
 
 function getProjectHazardLog(req, res){
-  var ProjectID = Number(req.params.id)
-  res.render('hazardLog')
+  var projectID = Number(req.params.id)
+
+  db.listProjectHazards(projectID)
+    .then(function(projectData){
+      console.log(projectData)
+      res.render('hazardLog',{'projectData': projectData[0],'hazardData':projectData})
+    })
 }
 
 module.exports = {

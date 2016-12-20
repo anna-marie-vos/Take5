@@ -10,7 +10,13 @@ exports.seed = function(knex, Promise) {
         knex('services').insert({discipline_id: 2,
             discipline_name: 'electrical'}),
         knex('services').insert({discipline_id: 3,
-            discipline_name: 'ICT'})
+            discipline_name: 'ICT'}),
+        knex('services').insert({discipline_id: 4,
+            discipline_name: 'mechanical'}),
+        knex('services').insert({discipline_id: 5,
+            discipline_name: 'structural'}),
+        knex('services').insert({discipline_id: 6,
+            discipline_name: 'main contractor'})
       ]);
     });
 };

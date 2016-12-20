@@ -1,27 +1,25 @@
 <div class="container">
   <header class="pageTitle">
     <h1 class="Title">
-      {{project_name}} Hazard Log
+      {{projectData.project_name}} Hazard Log
     </h1>
     <nav class="row">
-      <!-- <a class="click six columns" href="#connect" >Connect</a> -->
+      <a class="link" href="/index/{{projectData.project_id}}">{{projectData.project_name}} Site Information</a>
+      <a class="link" href="/index">Home</a>
     </nav>
   </header>
   <div class="HazardLog">
     <h2>Hazard log</h2>
     <table>
       <tr> <th>ID:</th><th>Service:</th><th>Hazard:</th><th>Consequence:</th><th>Expand:</th></tr>
-      <tr> <td>ID:</td><td>Service:</td><td>Hazard:</td><td>Consequence:</td><td>Expand:</td></tr>
+      {{#each hazardData}}
+      <tr> <td>{{hazard_id}}</td><td>Service:</td><td>Hazard:</td><td>Consequence:</td><td>Expand:</td></tr>
 
     </table>
   </div>
 
 
   <footer>
-    <nav>
-      <a class="link" href="/index/{{project_id}}">{{project_name}}Site Information</a>
-      <a class="link" href="/index">Home</a>
-    </nav>
   </footer>
 
 </div>
