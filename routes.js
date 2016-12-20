@@ -13,7 +13,7 @@ function getProjectData(req, res){
 
     db.listProjectData(ProjectID)
         .then(function(projectData){
-          res.render('projectData',{'projetData': projectData[0],'ppeData':projectData})
+          res.render('projectData',{'projectData': projectData[0],'ppeData':projectData})
         })
 }
 

@@ -1,10 +1,11 @@
 <div class="container">
   <header class="pageTitle">
     <h1 class="Title">
-      {{projetData.project_name}} Safety Information
+      {{projectData.project_name}} Safety Information
     </h1>
-    <nav class="row">
-      <!-- <a class="click six columns" href="#connect" >Connect</a> -->
+    <nav>
+      <a class="link" href="/index/{{projectData.project_id}}/hazard_log">Project Hazard Log</a>
+      <a class="link" href="/index">Home</a>
     </nav>
   </header>
   <div class ="project">
@@ -13,10 +14,10 @@
     </h2>
     <table>
       <tr> <th>Headings:</th><td>Desciptions:</th> </tr>
-      <tr> <th>Project Name: </th><td>{{projetData.project_name}}</th> </tr>
-      <tr> <th>Location: </th><td>{{projetData.location}}</th> </tr>
-      <tr> <th>SWMS: </th><td>{{projetData.SWMS}}</th> </tr>
-      <tr> <th>Important Notices: </th><td>{{projetData.important_Notices}}</th> </tr>
+      <tr> <th>Project Name: </th><td>{{projectData.project_name}}</th> </tr>
+      <tr> <th>Location: </th><td>{{projectData.location}}</th> </tr>
+      <tr> <th>SWMS: </th><td>{{projectData.SWMS}}</th> </tr>
+      <tr> <th>Important Notices: </th><td>{{projectData.important_Notices}}</th> </tr>
     </table>
   </div>
 
@@ -30,12 +31,5 @@
     </table>
 
   </div>
-
-  <footer>
-    <nav>
-      <a class="link" href="/index/{{project_id}}/hazard_log">Project Hazard Log</a>
-      <a class="link" href="/index">Home</a>
-    </nav>
-  </footer>
 
 </div>
