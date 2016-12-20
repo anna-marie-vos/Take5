@@ -13,13 +13,9 @@
     <table>
       <tr> <th>ID:</th><th>Service:</th><th>Hazard:</th><th>Consequence:</th><th>Expand:</th></tr>
       {{#each hazardData}}
-      <tr> <td>{{hazard_id}}</td><td>Service:</td><td>Hazard:</td><td>Consequence:</td><td>Expand:</td></tr>
-
+      <tr><td>{{hazard_id}}</td><td>{{discipline_name}}:</td>
+          <td>{{hazard}}:</td><td>{{consequence}}</td><td>Expand:</td></tr>
+      {{/each}}
     </table>
   </div>
-
-
-  <footer>
-  </footer>
-
 </div>
