@@ -15,11 +15,13 @@
     </h2>
     <table>
       <tr>
+        <th>Project Number</th>
         <th>Project Name</th>
         <th>Site Notifications</th>
       </tr>
       {{#each projects}}
       <tr>
+        <td><a class="link" href="/index/{{project_id}}">{{project_id}}</a></td>
         <td><a class="link" href="/index/{{project_id}}">{{project_name}}</a></td>
         <td>{{important_Notices}}</td>
       </tr>

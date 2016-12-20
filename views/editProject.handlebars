@@ -9,9 +9,14 @@
     <h2>
       Project Description
     </h2>
-    <form action ="/index/:id" method = "post">
+    <form action ="/index" method = "post">
       <table>
         <tr> <th>Headings:</th><th>Desciptions:</th> </tr>
+        <tr> <th>Project Number: </th>
+          <td><input placeholder="Project Number" type="text"
+            value ="{{projectData.project_id}}" name = "id"/>
+          </td>
+        </tr>
         <tr> <th>Project Name: </th>
           <td><input placeholder="Project Name" type="text"
             value ="{{projectData.project_name}}" name = "name"/>
