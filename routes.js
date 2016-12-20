@@ -35,9 +35,17 @@ function editProjectData(req, res){
     })
 }
 
+function addProjectDataChanges(req,res){
+  var projectID = Number(req.params.id)
+  var data = req.body
+  console.log(data)
+  res.redirect('editproject')
+}
+
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
   getProjectHazardLog: getProjectHazardLog,
   editProjectData: editProjectData,
+  addProjectDataChanges:addProjectDataChanges,
 }

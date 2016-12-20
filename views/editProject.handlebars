@@ -9,26 +9,32 @@
     <h2>
       Project Description
     </h2>
-    <table>
-      <tr> <th>Headings:</th><th>Desciptions:</th> </tr>
-      <tr> <th>Project Name: </th>
-        <td><input placeholder="Project Name" type="text" value ="{{projectData.project_name}}"/>
-        </td>
-      </tr>
-      <tr> <th>Location: </th>
-        <td><input placeholder="Project Location" type="text" value ="{{projectData.location}}"/>
+    <form action ="/index/:id" method = "post">
+      <table>
+        <tr> <th>Headings:</th><th>Desciptions:</th> </tr>
+        <tr> <th>Project Name: </th>
+          <td><input placeholder="Project Name" type="text"
+            value ="{{projectData.project_name}}" name = "name"/>
           </td>
-      </tr>
-      <tr> <th>SWMS: </th>
-        <td><input placeholder="SWMS" type="text" value ="{{projectData.SWMS}}"/>
-        </td>
-      </tr>
-      <tr><th>Important Notices: </th>
-        <td><input placeholder="Important Notices" type="text" value ="{{projectData.important_Notices}}"/>
-        </td>
-      </tr>
-    </table>
+        </tr>
+        <tr> <th>Location: </th>
+          <td><input placeholder="Project Location" type="text"
+            value ="{{projectData.location}}" name = "location"/>
+            </td>
+        </tr>
+        <tr> <th>SWMS: </th>
+          <td><input placeholder="SWMS" type="text"
+            value ="{{projectData.SWMS}}" name = "SWMS"/>
+          </td>
+        </tr>
+        <tr><th>Important Notices: </th>
+          <td><input placeholder="Important Notices" type="text"
+            value ="{{projectData.important_Notices}}" name="notice"/>
+          </td>
+        </tr>
+      </table>
     <input type="submit" name = "submit" value = "submit" />
+  </form>
   </div>
 
 </div>
