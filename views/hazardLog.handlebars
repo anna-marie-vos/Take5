@@ -1,4 +1,4 @@
-<div class="container">
+<div class="row">
   <header class="pageTitle">
     <h1 class="Title">
       {{projectData.project_name}} Hazard Log
@@ -14,7 +14,7 @@
       <tr> <th>ID:</th><th>Service:</th><th>Hazard:</th><th>Consequence:</th><th>Expand:</th></tr>
       {{#each allData}}
       <tr><td>{{hazard_id}}</td><td>{{discipline_name}}:</td>
-          <td>{{hazard}}</td><td>{{consequence}}</td><td>Expand:</td></tr>
+          <td>{{hazard}}</td><td>{{consequence}}</td><td>Expand</td></tr>
       {{/each}}
     </table>
   </div>

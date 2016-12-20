@@ -6,18 +6,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS Links-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" href="../styles.css">
 
 </head>
 <body>
-  <nav>
-    <a class="link" href="/index">Home</a>
-    <a class="link" href="/index/{{projectData.project_id}}">{{projectData.project_name}} Site Information</a>
-    <a class="link" href="/index/{{projectData.project_id}}/editProject">Edit Project</a>
-    <a class="link" href="/index/{{projectData.project_id}}/hazard_log">Project Hazard Log</a>
-  </nav>
+  <div class ="container">
+    <nav class="row">
+      <a class="button" href="/index">Home</a>
+      <a class="button" href="/index/{{projectData.project_id}}">{{projectData.project_name}} Site Information</a>
+      <a class="button" href="/index/{{projectData.project_id}}/editProject">Edit Project</a>
+      <a class="button" href="/index/{{projectData.project_id}}/hazard_log">Project Hazard Log</a>
+    </nav>
 
     {{{body}}}
-
+  </div>
 </body>
 </html>
