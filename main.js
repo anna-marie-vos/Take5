@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/',routes.getProjects);
 app.get('/index', routes.getProjects);
 app.get('/index/:id', routes.getProjectData);
+app.get('/index/:id/hazard_log', routes.getProjectHazardLog);
 
 
 module.exports = app

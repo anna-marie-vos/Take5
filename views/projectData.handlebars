@@ -1,46 +1,38 @@
 <div class="container">
   <header class="pageTitle">
     <h1 class="Title">
-      This.site HazardLog
+      {{project_name}} Safety Information
     </h1>
     <nav class="row">
       <!-- <a class="click six columns" href="#connect" >Connect</a> -->
     </nav>
   </header>
-  <div>
+  <div class ="project">
     <h2>
-      Current Hazard Log
+      Project Description
     </h2>
     <table>
-      <tr>
-        <th>Headings:</th>
-        <th>Desciptions:</th>
-      </tr>
-      <tr>
-        <th>Project Name: </th>
-        <th>{{project_name}}</th>
-      </tr>
-      <tr>
-        <th>Location: </th>
-        <th>{{location}}</th>
-      </tr>
-      <tr>
-        <th>SWMS: </th>
-        <th>{{SWMS}}</th>
-      </tr>
-      <tr>
-        <th>Important Notices: </th>
-        <th>{{important_Notices}}</th>
-      </tr>
+      <tr> <th>Headings:</th><td>Desciptions:</th> </tr>
+      <tr> <th>Project Name: </th><td>{{project_name}}</th> </tr>
+      <tr> <th>Location: </th><td>{{location}}</th> </tr>
+      <tr> <th>SWMS: </th><td>{{SWMS}}</th> </tr>
+      <tr> <th>Important Notices: </th><td>{{important_Notices}}</th> </tr>
+    </table>
+  </div>
+
+  <div class="PPEGear">
+    <h2>Site Required PPE Gear: </h2>
+    <table>
+      <tr> <th>PPE Item:</th><th>Image:</th></tr>
+      <tr> <td>hard hat</td><td>Pic Here</td></tr>
     </table>
   </div>
 
   <footer>
     <nav>
-      <a class="link" href="#">Add a risk</a>
+      <a class="link" href="/index/{{project_id}}/hazard_log">Project Hazard Log</a>
       <a class="link" href="/index">Home</a>
     </nav>
   </footer>
-
 
 </div>

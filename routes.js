@@ -13,13 +13,18 @@ function getProjectData(req, res){
 
     db.listProjectData(ProjectID)
         .then(function(projectData){
-            console.log(projectData)
-            res.render('projectData',projectData[0])
+              res.render('projectData',projectData[0])
         })
+}
+
+function getProjectHazardLog(req, res){
+  var ProjectID = Number(req.params.id)
+  res.render('hazardLog')
 }
 
 
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
+  getProjectHazardLog: getProjectHazardLog,
 }
