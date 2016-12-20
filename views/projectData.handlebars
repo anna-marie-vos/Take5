@@ -1,7 +1,7 @@
 <div class="container">
   <header class="pageTitle">
     <h1 class="Title">
-      {{project_name}} Safety Information
+      {{projetData.project_name}} Safety Information
     </h1>
     <nav class="row">
       <!-- <a class="click six columns" href="#connect" >Connect</a> -->
@@ -13,10 +13,10 @@
     </h2>
     <table>
       <tr> <th>Headings:</th><td>Desciptions:</th> </tr>
-      <tr> <th>Project Name: </th><td>{{project_name}}</th> </tr>
-      <tr> <th>Location: </th><td>{{location}}</th> </tr>
-      <tr> <th>SWMS: </th><td>{{SWMS}}</th> </tr>
-      <tr> <th>Important Notices: </th><td>{{important_Notices}}</th> </tr>
+      <tr> <th>Project Name: </th><td>{{projetData.project_name}}</th> </tr>
+      <tr> <th>Location: </th><td>{{projetData.location}}</th> </tr>
+      <tr> <th>SWMS: </th><td>{{projetData.SWMS}}</th> </tr>
+      <tr> <th>Important Notices: </th><td>{{projetData.important_Notices}}</th> </tr>
     </table>
   </div>
 
@@ -24,8 +24,11 @@
     <h2>Site Required PPE Gear: </h2>
     <table>
       <tr> <th>PPE Item:</th><th>Image:</th></tr>
-      <tr> <td>hard hat</td><td>Pic Here</td></tr>
+      {{#each ppeData}}
+      <tr> <td>{{ppe_name}}</td><td><img src="{{ppe_image}}" alt="ppe_name"></td></tr>
+      {{/each}}
     </table>
+
   </div>
 
   <footer>

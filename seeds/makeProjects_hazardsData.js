@@ -7,24 +7,24 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('projects_hazards')
         .insert({Proj_haz_id: 1,
-            project_id: 1,
-            hazard_id: 1 }),
+            proj_id: 1,
+            haz_id: 1 }),
         knex('projects_hazards')
         .insert({Proj_haz_id: 2,
-            project_id: 2,
-            hazard_id: 2 }),
+            proj_id: 2,
+            haz_id: 2 }),
         knex('projects_hazards')
         .insert({Proj_haz_id: 3,
-            project_id: 3,
-            hazard_id: 1 }),
+            proj_id: 3,
+            haz_id: 1 }),
         knex('projects_hazards')
         .insert({Proj_haz_id: 4,
-            project_id: 3,
-            hazard_id: 2 }),
+            proj_id: 3,
+            haz_id: 2 }),
         knex('projects_hazards')
         .insert({Proj_haz_id: 5,
-            project_id: 2,
-            hazard_id: 3 })
+            proj_id: 2,
+            haz_id: 3 })
       ]);
     });
 };

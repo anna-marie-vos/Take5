@@ -2,8 +2,8 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('projects_hazards', function (table) {
     table.increments('Proj_haz_id');
-    table.string('project_id');
-    table.string('hazard_id');
+    table.string('proj_id');
+    table.string('haz_id');
   })
 };
 

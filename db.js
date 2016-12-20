@@ -7,9 +7,11 @@ function listAllProjects (){
 }
 
 function listProjectData(projectID){
-  return knex('projects')
+  return knex('projects_ppe')
+  .join('projects','proj_id','=','projects.project_id')
+  .join('ppeGear','ppeGear_id','=','ppeGear.ppe_id')
   .select('*')
-  .where('project_id',projectID)
+  .where('projects.project_id',projectID)
 }
 
 
