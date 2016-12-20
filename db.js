@@ -12,6 +12,7 @@ function listProjectData(projectID){
   .join('ppeGear','ppeGear_id','=','ppeGear.ppe_id')
   .select('*')
   .where('projects.project_id',projectID)
+  .then(transformData)
 }
 
 function listProjectHazards(projectID){
@@ -21,8 +22,16 @@ function listProjectHazards(projectID){
   .join('services','services_id','=','services.discipline_id')
   .select('*')
   .where('projects.project_id',projectID)
+  .then(transformData)
 }
 
+function transformData(projectData){
+  var transformedData = {
+    'projectData': projectData[0],
+    'allData':projectData
+  }
+  return transformedData
+}
 
 module.exports = {
   listAllProjects: listAllProjects,

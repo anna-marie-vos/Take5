@@ -12,9 +12,9 @@
     <h2>Hazard log</h2>
     <table>
       <tr> <th>ID:</th><th>Service:</th><th>Hazard:</th><th>Consequence:</th><th>Expand:</th></tr>
-      {{#each hazardData}}
+      {{#each allData}}
       <tr><td>{{hazard_id}}</td><td>{{discipline_name}}:</td>
-          <td>{{hazard}}:</td><td>{{consequence}}</td><td>Expand:</td></tr>
+          <td>{{hazard}}</td><td>{{consequence}}</td><td>Expand:</td></tr>
       {{/each}}
     </table>
   </div>

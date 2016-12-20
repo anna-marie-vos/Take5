@@ -11,10 +11,10 @@ function getProjects (req, res) {
 function getProjectData(req, res){
   var projectID = Number(req.params.id)
 
-    db.listProjectData(projectID)
-        .then(function(projectData){
-          res.render('projectData',{'projectData': projectData[0],'ppeData':projectData})
-        })
+  db.listProjectData(projectID)
+    .then(function(projectData){
+      res.render('projectData',projectData)
+    })
 }
 
 function getProjectHazardLog(req, res){
@@ -22,8 +22,7 @@ function getProjectHazardLog(req, res){
 
   db.listProjectHazards(projectID)
     .then(function(projectData){
-      console.log(projectData)
-      res.render('hazardLog',{'projectData': projectData[0],'hazardData':projectData})
+      res.render('hazardLog', projectData)
     })
 }
 
