@@ -26,7 +26,7 @@ function getProjectHazardLog(req, res){
     })
 }
 
-function editProjectData(req, res){
+function getProjectEditForm(req, res){
   var projectID = Number(req.params.id)
   db.listProjectData(projectID)
     .then(function(projectData){
@@ -34,16 +34,18 @@ function editProjectData(req, res){
     })
 }
 
-function addProjectDataChanges(req,res){
+function editProjectData(req,res){
   var changedData = req.body
-  console.log(changedData)
-  res.redirect('index/'+changedData.id)
+  db.changeProjectData(changedData)
+  .then(function(){
+    res.redirect('index/'+changedData.id)
+  })
 }
 
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
   getProjectHazardLog: getProjectHazardLog,
-  editProjectData: editProjectData,
-  addProjectDataChanges:addProjectDataChanges,
+  getProjectEditForm: getProjectEditForm,
+  editProjectData:editProjectData,
 }

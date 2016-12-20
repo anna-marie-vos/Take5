@@ -25,6 +25,18 @@ function listProjectHazards(projectID){
   .then(transformData)
 }
 
+function changeProjectData(projectData){
+  return knex('projects')
+  .where('projects.project_id',projectData.id)
+  .update({
+    project_id: projectData.id,
+    project_name: projectData.name,
+    location: projectData.location,
+    SWMS: projectData.SWMS,
+    important_Notices: projectData.notice
+  })
+}
+
 function transformData(projectData){
   var transformedData = {
     'projectData': projectData[0],
@@ -33,8 +45,10 @@ function transformData(projectData){
   return transformedData
 }
 
+
 module.exports = {
   listAllProjects: listAllProjects,
   listProjectData: listProjectData,
   listProjectHazards: listProjectHazards,
+  changeProjectData: changeProjectData,
 }
