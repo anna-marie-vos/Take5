@@ -19,6 +19,7 @@ app.get('/',routes.getProjects);
 app.get('/index', routes.getProjects);
 app.get('/index/:id', routes.getProjectData);
 app.get('/index/:id/hazard_log', routes.getProjectHazardLog);
+app.get('/index/:id/editProject',routes.editProjectData);
 
 
 module.exports = app

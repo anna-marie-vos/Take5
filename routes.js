@@ -26,8 +26,18 @@ function getProjectHazardLog(req, res){
     })
 }
 
+function editProjectData(req, res){
+  var projectID = Number(req.params.id)
+
+  db.listProjectData(projectID)
+    .then(function(projectData){
+      res.render('editProject',projectData)
+    })
+}
+
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
   getProjectHazardLog: getProjectHazardLog,
+  editProjectData: editProjectData,
 }

@@ -4,8 +4,9 @@
       {{projectData.project_name}} Safety Information
     </h1>
     <nav>
-      <a class="link" href="/index/{{projectData.project_id}}/hazard_log">Project Hazard Log</a>
       <a class="link" href="/index">Home</a>
+      <a class="link" href="/index/{{projectData.project_id}}/editProject">Edit Project</a>
+      <a class="link" href="/index/{{projectData.project_id}}/hazard_log">Project Hazard Log</a>
     </nav>
   </header>
   <div class ="project">
@@ -14,10 +15,10 @@
     </h2>
     <table>
       <tr> <th>Headings:</th><td>Desciptions:</th> </tr>
-      <tr> <th>Project Name: </th><td>{{projectData.project_name}}</th> </tr>
-      <tr> <th>Location: </th><td>{{projectData.location}}</th> </tr>
-      <tr> <th>SWMS: </th><td>{{projectData.SWMS}}</th> </tr>
-      <tr> <th>Important Notices: </th><td>{{projectData.important_Notices}}</th> </tr>
+      <tr> <th>Project Name: </th> <td>{{projectData.project_name}} </td> </tr>
+      <tr> <th>Location: </th><td>{{projectData.location}}</td> </tr>
+      <tr> <th>SWMS: </th><td>{{projectData.SWMS}}</td> </tr>
+      <tr> <th>Important Notices: </th><td>{{projectData.important_Notices}}</td> </tr>
     </table>
   </div>
 
