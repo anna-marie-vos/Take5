@@ -62,6 +62,10 @@ function getPpeGearData(){
   .select('*')
 }
 
+function addNewPpeData(newPpeData){
+  
+}
+
 module.exports = {
   listAllProjects: listAllProjects,
   listProjectData: listProjectData,

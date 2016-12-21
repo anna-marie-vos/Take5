@@ -53,13 +53,12 @@ function searchUrlForNumber(url){
 function getNewProjectForm(req, res){
   db.getPpeGearData()
   .then(function(ppeData){
-    console.log(ppeData)
     res.render('newProject',{'ppeData':ppeData})
   })
 }
 
 function addNewProjectData(req, res){
-  newProjectData = req.body
+  var newProjectData = req.body
   db.addNewProjectData(newProjectData)
   .then(function(){
     res.redirect('/')
@@ -67,7 +66,12 @@ function addNewProjectData(req, res){
 }
 
 function addPPEDataToProject(req, res){
-
+  newPpeData = req.body
+  console.log(newPpeData)
+  db.addNewPpeData(newPpeData)
+  .then(function(){
+    res.redirect('/')
+  })
 }
 
 module.exports = {
