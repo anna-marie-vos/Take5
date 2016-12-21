@@ -21,5 +21,6 @@ app.get('/index/:id', routes.getProjectData);
 app.get('/index/:id/hazard_log', routes.getProjectHazardLog);
 app.get('/index/:id/editProject',routes.getProjectEditForm);
 app.post('/index/',routes.editProjectData);
+app.get('/newProject', routes.getNewProjectForm);
 
 module.exports = app

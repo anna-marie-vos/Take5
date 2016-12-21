@@ -50,10 +50,15 @@ function searchUrlForNumber(url){
   return id
 }
 
+function getNewProjectForm(req, res){
+  res.render('newProject')
+}
+
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
   getProjectHazardLog: getProjectHazardLog,
   getProjectEditForm: getProjectEditForm,
   editProjectData:editProjectData,
+  getNewProjectForm:getNewProjectForm,
 }
