@@ -54,6 +54,12 @@ function getNewProjectForm(req, res){
   res.render('newProject')
 }
 
+function addNewProjectData(req, res){
+  newProjectData = req.body
+  console.log(newProjectData)
+  res.redirect('/')
+}
+
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
@@ -61,4 +67,5 @@ module.exports = {
   getProjectEditForm: getProjectEditForm,
   editProjectData:editProjectData,
   getNewProjectForm:getNewProjectForm,
+  addNewProjectData:addNewProjectData,
 }
