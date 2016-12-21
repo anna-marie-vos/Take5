@@ -36,12 +36,20 @@ function getProjectEditForm(req, res){
 
 function editProjectData(req,res){
   var changedData = req.body
-  db.changeProjectData(changedData)
-  .then(function(){
-    res.redirect('index/'+changedData.id)
+
+  var projectID = searchUrlForNumber(req.headers.referer)
+
+  db.changeProjectData(changedData,projectID)
+  .then(function(projectData){
+    res.redirect('index/'+projectID)
   })
 }
 
+function searchUrlForNumber(url){
+  var arr = url.split('/')
+  var id = Number(arr[arr.length-2])
+  return id
+}
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,

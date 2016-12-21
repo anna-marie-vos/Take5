@@ -25,11 +25,11 @@ function listProjectHazards(projectID){
   .then(transformData)
 }
 
-function changeProjectData(projectData){
+function changeProjectData(projectData, projectID){
   return knex('projects')
-  .where('projects.project_id',projectData.id)
+  .where('projects.project_id', projectID)
   .update({
-    project_id: projectData.id,
+    project_number: projectData.number,
     project_name: projectData.name,
     location: projectData.location,
     SWMS: projectData.SWMS,
