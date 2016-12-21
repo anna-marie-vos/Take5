@@ -36,7 +36,6 @@ function getProjectEditForm(req, res){
 
 function editProjectData(req,res){
   var changedData = req.body
-
   var projectID = searchUrlForNumber(req.headers.referer)
 
   db.changeProjectData(changedData,projectID)
@@ -50,6 +49,7 @@ function searchUrlForNumber(url){
   var id = Number(arr[arr.length-2])
   return id
 }
+
 module.exports = {
   getProjects: getProjects,
   getProjectData: getProjectData,
