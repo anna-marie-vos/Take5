@@ -57,10 +57,16 @@ function addNewProjectData(newProjectData){
   .select('*')
 }
 
+function getPpeGearData(){
+  return knex('ppeGear')
+  .select('*')
+}
+
 module.exports = {
   listAllProjects: listAllProjects,
   listProjectData: listProjectData,
   listProjectHazards: listProjectHazards,
   changeProjectData: changeProjectData,
   addNewProjectData:addNewProjectData,
+  getPpeGearData: getPpeGearData,
 }

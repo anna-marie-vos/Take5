@@ -51,7 +51,11 @@ function searchUrlForNumber(url){
 }
 
 function getNewProjectForm(req, res){
-  res.render('newProject')
+  db.getPpeGearData()
+  .then(function(ppeData){
+    console.log(ppeData)
+    res.render('newProject',{'ppeData':ppeData})
+  })
 }
 
 function addNewProjectData(req, res){
