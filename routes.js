@@ -61,7 +61,13 @@ function getNewProjectForm(req, res){
 function addNewProjectData(req, res){
   newProjectData = req.body
   db.addNewProjectData(newProjectData)
-  res.redirect('/')
+  .then(function(){
+    res.redirect('/')
+  })
+}
+
+function addPPEDataToProject(req, res){
+
 }
 
 module.exports = {
@@ -72,4 +78,5 @@ module.exports = {
   editProjectData:editProjectData,
   getNewProjectForm:getNewProjectForm,
   addNewProjectData:addNewProjectData,
+  addPPEDataToProject:addPPEDataToProject,
 }
