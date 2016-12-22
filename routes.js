@@ -59,6 +59,7 @@ function getNewProjectForm(req, res){
 
 function addNewProjectData(req, res){
   var newProjectData = req.body
+  console.log(newProjectData)
   db.addNewProjectData(newProjectData)
   .then(function(){
     res.redirect('/')

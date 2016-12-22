@@ -23,6 +23,6 @@ app.get('/index/:id/editProject',routes.getProjectEditForm);
 app.post('/index/',routes.editProjectData);
 app.get('/newProject', routes.getNewProjectForm);
 app.post('/project',routes.addNewProjectData);
-app.post('/PPE',routes.addPPEDataToProject);
+// app.post('/PPE',routes.addPPEDataToProject);
 
 module.exports = app

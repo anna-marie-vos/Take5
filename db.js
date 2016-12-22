@@ -46,15 +46,43 @@ function transformData(projectData){
 }
 
 function addNewProjectData(newProjectData){
-  var data ={
+  var projectData ={
     project_number: newProjectData.number,
     project_name: newProjectData.name,
     location: newProjectData.location,
     SWMS: newProjectData.SWMS,
     important_Notices: newProjectData.notice
   }
-  return knex.insert(data).into('projects')
+  var ppeArr
+  return knex.insert(projectData).into('projects')
+  .then(function(project_id){
+    ppeArr = getPpeIds(project_id,newProjectData)
+    console.log(ppeArr)
+  })
+    //this line is not working
+  .insert(ppeArr).into('projects_ppe')
+  // .select('*')
+}
+
+//adding data to the 'projects_ppe' table
+//get the new project's id from the 'projects' table
+//get the id's of each of the items listed for ppe gear
+//insert each item into the 'projects_ppe' table
+function getPpeIds(project_id,newProjectData){
+  var newProjectPpeData = [];
+  var keysArray = Object.keys(newProjectData);
+  return knex('ppeGear')
   .select('*')
+  .then(function(ppeArr){
+    for(var x =0;x<ppeArr.length;x++){
+      for(var y = 0; y<keysArray.length;y++){
+        if(ppeArr[x].ppe_name === keysArray[y]){
+          newProjectPpeData.push({'proj_id': project_id[0],'ppeGear_id':ppeArr[x].ppe_id})
+        }
+      }
+    }
+    return newProjectPpeData
+  })
 }
 
 function getPpeGearData(){
@@ -63,7 +91,7 @@ function getPpeGearData(){
 }
 
 function addNewPpeData(newPpeData){
-  
+
 }
 
 module.exports = {

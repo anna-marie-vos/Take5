@@ -1,0 +1,14 @@
+<div class="PPEGear">
+  <h2>Site Required PPE Gear: </h2>
+  <form action ="/PPE" method = "post">
+  <table>
+    <tr><th>PPE Item:</th><th>Image:</th></tr>
+    {{#each ppeData}}
+    <tr><td><input type="checkbox" name="{{ppe_name}}"/> {{ppe_name}}</td>
+      <td><img src="{{ppe_image}}"></td>
+    </tr>
+    {{/each}}
+  </table>
+  <input type="submit" name = "submit" value = "submit" />
+</form>
+</div>
