@@ -89,7 +89,15 @@ function getPpeGearData(){
 }
 
 function addNewPpeData(newPpeData){
-
+  console.log(newPpeData)
+  var newPpeItem = {
+    ppe_name: newPpeData.ppe_name,
+    ppe_image: newPpeData.ppe_image
+  }
+  //not tested
+  return knex('ppeGear')
+    .insert(newPpeItem)
+    .select('*')
 }
 
 module.exports = {
@@ -99,4 +107,5 @@ module.exports = {
   changeProjectData: changeProjectData,
   addNewProjectData:addNewProjectData,
   getPpeGearData: getPpeGearData,
+  addNewPpeData:addNewPpeData,
 }

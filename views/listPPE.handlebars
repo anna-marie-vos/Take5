@@ -1,0 +1,22 @@
+<div class="row">
+  <header class="pageTitle">
+    <h1 class="Title">
+      PPE Gear List
+    </h1>
+    <nav class="row">
+        <a class="button" href="/newPPEForm">Add New PPE Gear</a>
+
+    </nav>
+
+<div class="PPEGear">
+
+  <h2>All available PPE Gear: </h2>
+  <table>
+    <tr><th>PPE Item:</th><th>Image:</th></tr>
+    {{#each ppeData}}
+    <tr><td>{{ppe_name}}</td>
+      <td><img src="{{ppe_image}}"></td>
+    </tr>
+    {{/each}}
+  </table>
+</div>

@@ -59,21 +59,31 @@ function getNewProjectForm(req, res){
 
 function addNewProjectData(req, res){
   var newProjectData = req.body
-  console.log(newProjectData)
   db.addNewProjectData(newProjectData)
   .then(function(){
     res.redirect('/')
   })
 }
 
-function addPPEDataToProject(req, res){
-  newPpeData = req.body
-  console.log(newPpeData)
-  db.addNewPpeData(newPpeData)
-  .then(function(){
-    res.redirect('/')
+function getPpeList(req, res){
+  db.getPpeGearData()
+  .then(function(ppeData){
+    res.render('listPPE',{'ppeData':ppeData})
   })
 }
+
+function getNewPpeForm(req,res){
+  res.render('newPPE')
+}
+
+function addNewPpeData(req,res){
+  var newPpeData = req.body
+  db.addNewPpeData(newPpeData)
+  .then(function(ppeData){
+    res.render('listPPE',{'ppeData':ppeData})
+  })
+}
+
 
 module.exports = {
   getProjects: getProjects,
@@ -83,5 +93,7 @@ module.exports = {
   editProjectData:editProjectData,
   getNewProjectForm:getNewProjectForm,
   addNewProjectData:addNewProjectData,
-  addPPEDataToProject:addPPEDataToProject,
+  getPpeList: getPpeList,
+  getNewPpeForm:getNewPpeForm,
+  addNewPpeData:addNewPpeData,
 }
