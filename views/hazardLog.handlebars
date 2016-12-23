@@ -6,6 +6,9 @@
   </header>
   <div class="HazardLog">
     <h2>Hazard log</h2>
+    <nav>
+      <a class="button" href="/{{projectData.project_id}}/newHazForm">New {{projectData.project_Name}}</a>
+    </nav>
     <table>
       <tr> <th>ID:</th><th>Service:</th><th>Hazard:</th><th>Consequence:</th>
             <th>Expand:</th><th>Edit:</th></tr>
@@ -16,7 +19,6 @@
           <td><input type="submit" name = "edit" value = "edit" /></td>
       </tr>
       {{/each}}
-      <input type="submit" name = "New" value = "New" />
     </table>
   </div>
 </div>

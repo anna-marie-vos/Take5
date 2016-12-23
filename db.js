@@ -98,6 +98,31 @@ function addNewPpeData(newPpeData){
     .select('*')
 }
 
+function addNewHazardData(newHazardData, projectID){
+  var newHazard = {
+        hazard: newHazardData.hazard,
+        consequence: newHazardData.consequence,
+        photos: newHazardData.photos,
+        existing_mitigation: newHazardData.existing_mitigation,
+        future_mitigation: newHazardData.future_mitigation,
+        add_notice: newHazardData.add_notice,
+        owner: newHazardData.owner,
+        liklihood: newHazardData.liklihood,
+        eliminated: newHazardData.eliminated
+    }
+    return knex('hazards')
+    .insert(newHazard)
+    .then(function(hazard_id){
+      return addIdsToProjHazTable(projectID,hazard_id)
+    })
+
+}
+
+function addIdsToProjHazTable(projectID,hazard_id){
+  return knex('projects_hazards')
+  .insert({'proj_id': projectID, 'haz_id':hazard_id[0], 'services_id':1})
+}
+
 module.exports = {
   listAllProjects: listAllProjects,
   listProjectData: listProjectData,
@@ -106,4 +131,5 @@ module.exports = {
   addNewProjectData:addNewProjectData,
   getPpeGearData: getPpeGearData,
   addNewPpeData:addNewPpeData,
+  addNewHazardData: addNewHazardData,
 }

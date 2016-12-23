@@ -25,6 +25,8 @@ app.get('/newProject', routes.getNewProjectForm);
 app.post('/project',routes.addNewProjectData);
 app.get('/listPPE', routes.getPpeList);
 app.get('/newPPEForm', routes.getNewPpeForm);
-app.post('/addingPPE', routes.addNewPpeData)
+app.post('/addingPPE', routes.addNewPpeData);
+app.get('/:id/newHazForm',routes.getNewHazardForm);
+app.post('/addingHazard', routes.addNewHazard);
 
 module.exports = app
