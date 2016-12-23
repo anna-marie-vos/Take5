@@ -80,7 +80,7 @@ function addNewPpeData(req,res){
   var newPpeData = req.body
   db.addNewPpeData(newPpeData)
   .then(function(ppeData){
-    res.render('listPPE',{'ppeData':ppeData})
+    res.redirect('listPPE')
   })
 }
 
