@@ -93,7 +93,6 @@ function addNewPpeData(newPpeData){
     ppe_name: newPpeData.ppe_name,
     ppe_image: newPpeData.ppe_image
   }
-  console.log(newPpeItem)
   return knex('ppeGear')
     .insert(newPpeItem)
     .select('*')
