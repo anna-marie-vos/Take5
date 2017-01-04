@@ -53,26 +53,36 @@ function addNewProjectData(newProjectData){
     SWMS: newProjectData.SWMS,
     important_Notices: newProjectData.notice
   }
+  var globalProjectId = ""
   return knex('projects')
   .insert(projectData)
   .then(function(project_id){
+    globalProjectId = project_id
     return getPpeIds(project_id,newProjectData)
   })
   .then(function(ppeData){
     return insertPpeData(ppeData)
+  })
+  .then(function(){
+    return linkProjectToHazards(globalProjectId)
   })
 }
 
 function getPpeIds(project_id,newProjectData){
   var newProjectPpeData = [];
   var keysArray = Object.keys(newProjectData);
+  // console.log(keysArray)
   return knex('ppeGear')
   .select('*')
   .then(function(ppeArr){
     for(var x =0;x<ppeArr.length;x++){
       for(var y = 0; y<keysArray.length;y++){
         if(ppeArr[x].ppe_name === keysArray[y]){
-          newProjectPpeData.push({'proj_id': project_id[0],'ppeGear_id':ppeArr[x].ppe_id})
+          var ppeData = {
+            'proj_id': project_id[0],
+            'ppeGear_id':ppeArr[x].ppe_id
+          }
+          newProjectPpeData.push(ppeData)
     } } }
     return newProjectPpeData
   })
@@ -83,35 +93,32 @@ function insertPpeData(ppeData){
   .insert(ppeData)
 }
 
+function linkProjectToHazards(project_id){
+  var data = {
+    proj_id: project_id[0],
+    haz_id: 1,
+    services_id: 1
+  }
+  return knex('projects_hazards')
+  .insert(data)
+}
+
 function getPpeGearData(){
   return knex('ppeGear')
   .select('*')
 }
 
 function addNewPpeData(newPpeData){
-  var newPpeItem = {
-    ppe_name: newPpeData.ppe_name,
-    ppe_image: newPpeData.ppe_image
-  }
+  delete newPpeData.submit
   return knex('ppeGear')
-    .insert(newPpeItem)
+    .insert(newPpeData)
     .select('*')
 }
 
 function addNewHazardData(newHazardData, projectID){
-  var newHazard = {
-        hazard: newHazardData.hazard,
-        consequence: newHazardData.consequence,
-        photos: newHazardData.photos,
-        existing_mitigation: newHazardData.existing_mitigation,
-        future_mitigation: newHazardData.future_mitigation,
-        add_notice: newHazardData.add_notice,
-        owner: newHazardData.owner,
-        liklihood: newHazardData.liklihood,
-        eliminated: newHazardData.eliminated
-    }
+    delete newHazardData.submit
     return knex('hazards')
-    .insert(newHazard)
+    .insert(newHazardData)
     .then(function(hazard_id){
       return addIdsToProjHazTable(projectID,hazard_id)
     })

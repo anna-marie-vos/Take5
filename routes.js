@@ -85,14 +85,13 @@ function addNewPpeData(req,res){
 }
 function getNewHazardForm(req, res){
   var projectID = Number(req.params.id)
-  console.log(projectID)
   res.render('newHazardEntry')
 }
 
 function addNewHazard(req,res){
   var newHazardData = req.body
   var projectID = searchUrlForNumber(req.headers.referer)
-  console.log(newHazardData, projectID)
+  // console.log(newHazardData, projectID)
   db.addNewHazardData(newHazardData, projectID)
   res.redirect('/index/'+projectID+'/hazard_log')
 }
