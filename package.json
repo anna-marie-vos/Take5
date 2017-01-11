@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./01-server/www",
+    "start": "node ./bin/www",
       "dev":"node-dev ./01-server/www",
-    "test":"ava test/**/*.js --serial --verbose",
-    "knex": "knex"
+    "test":"ava test/**/*.js --serial --verbose"
   },
   "dependencies": {
     "body-parser": "^1.13.3",

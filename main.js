@@ -1,4 +1,3 @@
-var app = express()
 var express = require('express')
 var path = require('path')
 var bodyParser = require('body-parser')
@@ -14,6 +13,7 @@ module.exports = appGenerator(db)
 
 //app generator function
 function appGenerator(db){
+  var app = express()
 
   //if we're in development generate the app using this.
   if(app.get('env')==='development'){
