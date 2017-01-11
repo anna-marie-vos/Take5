@@ -1,32 +1,62 @@
+var app = express()
 var express = require('express')
-var expresshbs = require('express-handlebars')
 var path = require('path')
 var bodyParser = require('body-parser')
-var fs = require('fs')
-var routes = require('./routes')
-var app = express()
+var apiRoute = require('./03-apiRoutes')
 
 // view engine setup
-app.engine('handlebars', expresshbs({defaultLayout: 'main'})) // makes the main page html file work.
-app.set('view engine', 'handlebars') //causes the render function to work
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
-// stuff above are all setup type things
 
-app.get('/',routes.getProjects);
-app.get('/index', routes.getProjects);
-app.get('/index/:id', routes.getProjectData);
-app.get('/index/:id/hazard_log', routes.getProjectHazardLog);
-app.get('/index/:id/editProject',routes.getProjectEditForm);
-app.post('/index/',routes.editProjectData);
-app.get('/newProject', routes.getNewProjectForm);
-app.post('/project',routes.addNewProjectData);
-app.get('/listPPE', routes.getPpeList);
-app.get('/newPPEForm', routes.getNewPpeForm);
-app.post('/addingPPE', routes.addNewPpeData);
-app.get('/:id/newHazForm',routes.getNewHazardForm);
-app.post('/addingHazard', routes.addNewHazard);
+//export module
+module.exports = appGenerator(db)
 
-module.exports = app
+//app generator function
+function appGenerator(db){
+
+  //if we're in development generate the app using this.
+  if(app.get('env')==='development'){
+    var webpackDevMiddleware = require('webpack-dev-middleware')
+    var config = require('./webpack.config')
+    var webpack = require('webpack')
+    var compiler = webpack(config)
+    var livereload = require('livereload')
+    var lrserver = livereload.createServer()
+
+    lrserver.watch([
+      __dirname+"/public",
+      __dirname+"/04-clientViews"
+    ])
+
+    app.use(require('inject-lr-script')())
+    app.use(webpackDevMiddleware(compiler,{
+      noInfo:true,
+      publicPath:config.output.publickPath
+    }))
+  }
+  // the static route
+  app.use(express.static(path.join(__dirname, 'public')))
+
+  // routes
+  app.use('api/v1/Take5', api.Take5(db))
+
+  //catch the 404 error
+  app.use(function(req,res,next){
+    var err = new Error('Not Found')
+    err.status = 404
+    next(err)
+  })
+  //handling other errors
+  //error handling during development
+  if(app.get('env')==='development'){
+    app.use(function(err,req,res,next){
+      res.status(err.status ||500)
+      res.json({
+        message: err.message,
+        error:{}
+      })
+    })
+  }
+  return app
+}
