@@ -2,8 +2,8 @@
 
 
 // Module dependencies.
-  var knex = require('../02-db/knex')
-  var db = require('../02-db')(knex)
+  var dbExports = require('../02-db/dbExports')
+  var db = require('../02-db/db')(dbExports)
  var main = require('../main')(db);
  var http = require('http');
 

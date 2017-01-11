@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./01-server/www",
       "dev":"node-dev ./01-server/www",
     "test":"ava test/**/*.js --serial --verbose"
   },

@@ -1,4 +1,4 @@
-module.exports = knexFunctions(knex)
+module.exports = knexFunctions
 
 function knexFunctions(knex){
   return {
