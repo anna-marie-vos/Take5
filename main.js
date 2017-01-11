@@ -1,3 +1,4 @@
+//snapshot of serverside app only
 var express = require('express')
 var expresshbs = require('express-handlebars')
 var path = require('path')
