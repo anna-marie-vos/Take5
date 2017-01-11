@@ -17,3 +17,9 @@ const express = require('express') and then
 const app = express() in the module.exports.
 
 5) what does this do? app.use(express.static(path.join(__dirname, 'public')))
+
+6) in the server/www page why do we now require the following:
+
+const knex = require('../db/knex') // knex instance
+const db = require('../db')(knex) // db methods
+const app = require('../app')(db) // app

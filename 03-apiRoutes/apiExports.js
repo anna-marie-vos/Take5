@@ -1,3 +1,9 @@
 var hazards = require('./hazardRoutes')
 var projects = require('./projectsRoutes')
-var projects = require('./ppeRoutes')
+var ppeGear = require('./ppeRoutes')
+
+module.exports = {
+  hazards,
+  projects,
+  ppeGear
+}
