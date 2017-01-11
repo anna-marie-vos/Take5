@@ -1,11 +1,11 @@
 Notes of things to resolve:
 
-1) how do I get the project_ID from my edit form?
-2) how do I allow the project_ID to be changed in the from even if the number is changed?
+1) In the package.json what does:  "dev":"node-dev ./bin/www", do??
 
---Q2:Posible answer: Add another column called project_num and allow that one to be changed.
+2) I did not install, is that bad?:
 
-3) how to link an empty hazard to a new project so that the other code works
+"cookie-parser": "~1.3.5",
 
---Q3:Posible answer: when creating a project create an empty hazard and link that to the other
-tables so that the link is pre-existing when you go to the hazards and new hazards page.
+"morgan": "~1.6.1",
+
+3) what does webpack.config.js do? where should I get that from?
