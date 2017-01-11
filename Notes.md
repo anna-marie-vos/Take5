@@ -23,3 +23,6 @@ const app = express() in the module.exports.
 const knex = require('../db/knex') // knex instance
 const db = require('../db')(knex) // db methods
 const app = require('../app')(db) // app
+
+7) in the server/www page why do we have :
+const debug = require('debug')('server')

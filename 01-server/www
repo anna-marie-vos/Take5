@@ -2,7 +2,9 @@
 
 
 // Module dependencies.
- var main = require('../main');
+  var knex = require('../02-db/knex')
+  var db = require('../02-db')(knex)
+ var main = require('../main')(db);
  var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
