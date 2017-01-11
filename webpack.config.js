@@ -1,7 +1,7 @@
 const path = require('path')
 
 const PATHS = {
-  entry: path.join(__dirname, '/client/index.js'),
+  entry: path.join(__dirname, '/04-clientViews/index.js'),
   output: path.join(__dirname, '/public')
 }
 
