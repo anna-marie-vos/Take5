@@ -6,40 +6,42 @@ const ProductRow = require('./product-row')
 const CartRow = require('./cart-row')
 
 module.exports = function App (props) {
-  console.log('props', props)
-  console.log('state', props.store.getState())
-  
-  return (
-    <div className="shop">
-      <h1>SHOP</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>ITEMS</th>
-              <th>PRICE</th>
-              <th>stock</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+  console.log('app.js props', props)
+  console.log('app.js state', props.store.getState())
 
-      <h2>CART</h2>
+  return (
+    <div class="row">
+      <header class="pageTitle">
+        <h1 class="Title">
+          Take5: Hazard Identification Checklist
+        </h1>
+        <nav class="row">
+            <button class="button" href="#">New project</button>
+            <button class="button" href="#">List all PPE gear</button>
+        </nav>
+      </header>
+      <div class ="row">
+        <h2>
+          Notice Board
+        </h2>
         <table>
           <thead>
             <tr>
-              <th>Items</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-              <th></th>
+              <th>Project Number</th>
+              <th>Project Name</th>
+              <th>Site Notifications</th>
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td><a class="link" href="#">Project Number</a></td>
+              <td><a class="link" href="#">Project Name</a></td>
+              <td>Important Notices</td>
+            </tr>
           </tbody>
         </table>
-        <p>Total : $ {0}</p>
-        <button type="button" name="checkout" id="checkout">checkout</button>
+      </div>
+
     </div>
   )
 }

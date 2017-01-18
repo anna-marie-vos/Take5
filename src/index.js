@@ -31,13 +31,9 @@ const initialState = {
 
 
 const store = createStore(reducer, initialState)
-// store .dispatch(action)
-// reducer -> state
-// store.subscribe
 
-// store .getState -> state
-console.log('src/index.js store', store)
-console.log('src/index.js state', store.getState())
+// console.log('src/index.js store', store)
+// console.log('src/index.js state', store.getState())
 
 document.addEventListener('DOMContentLoaded', (e) => {
 
