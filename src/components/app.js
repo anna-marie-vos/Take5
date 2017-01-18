@@ -2,40 +2,46 @@ const React = require('react')
 const _ = require('lodash')
 
 //components
-const ProductRow = require('./product-row')
-const CartRow = require('./cart-row')
+// const ProductRow = require('./product-row')
+// const CartRow = require('./cart-row')
+
 
 module.exports = function App (props) {
   console.log('app.js props', props)
-  console.log('app.js state', props.store.getState())
+  // console.log('app.js state', props.store.getState())
+  const {state, store} = props
+  const {PPEGear, projects} = state
+  const {project_id, project_number, project_name , important_Notices} = projects
+
+console.log('app.js projects: ',projects)
 
   return (
-    <div class="row">
-      <header class="pageTitle">
-        <h1 class="Title">
+    <div className="row">
+      <header className="pageTitle">
+        <h1 className="Title">
           Take5: Hazard Identification Checklist
         </h1>
-        <nav class="row">
-            <button class="button" href="#">New project</button>
-            <button class="button" href="#">List all PPE gear</button>
+        <nav className="row">
+            <button className="button" href="#">New project</button>
+            <button className="button" href="#">List all PPE gear</button>
         </nav>
       </header>
-      <div class ="row">
+      <div className ="row">
         <h2>
           Notice Board
         </h2>
         <table>
           <thead>
             <tr>
-              <th>Project Number</th>
-              <th>Project Name</th>
-              <th>Site Notifications</th>
+              <th>project number</th>
+              <th>project name</th>
+              <th>important Notices</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><a class="link" href="#">Project Number</a></td>
-              <td><a class="link" href="#">Project Name</a></td>
+              <td><a className="link" href="#">Project Number</a></td>
+              <td><a className="link" href="#">Project Name</a></td>
               <td>Important Notices</td>
             </tr>
           </tbody>

@@ -8,25 +8,34 @@ const reducer = require('./reducer')
 const App = require('./components/app')
 const CounterApp = require('./components/counter-app')
 
-
-
-// actions
-// plain object {type: string, payload: Object | string | number}
-
-// model -> state
-
-// reducer (state, action) :: -> state
-//const initialState = 0
+//initialState
 const initialState = {
-  products: {
-    1: {id: 1, name: 'banana', stock: 2, price:2}
-  },
-
-  cart:  {
-
-  },
-
-  total: 0
+  projects: [
+    {project_id: 1,
+      project_number:'122433',
+      project_name: 'Aurecon Offices',
+      location:'Level 8, 1 Willis street,',
+      SWMS:'Not available at present',
+      important_Notices:''
+    },
+    {project_id: 2,
+      project_number:'345221',
+      project_name: 'Chorus exchange',
+      location:'wellington, 3 thorndon street',
+      SWMS:'available, link required',
+      important_Notices:'Only wooden ladders allowed on site'
+    }
+  ],
+  PPEGear: [
+    {ppe_id: 1,
+      ppe_name: 'Safety Boots',
+      ppe_image:'http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff'
+    },
+    {ppe_id: 2,
+      ppe_name: 'high vis yellow vest',
+      ppe_image:'https://images-na.ssl-images-amazon.com/images/I/41TZhfvh-yL.jpg'
+    }
+  ]
 }
 
 
