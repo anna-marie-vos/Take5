@@ -4,6 +4,10 @@ const ReactDOM = require('react-dom')
 const { createStore } = require('redux')
 const reducer = require('./reducer')
 
+const Router = require('react-router').Router
+const Route = require('react-router').Route
+const Link = require('react-router').Link
+
 // components
 const App = require('./components/app')
 
