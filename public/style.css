@@ -1,3 +1,20 @@
-h1 {
-  color: red;
+
+*{
+  border:0px solid black;
+  /*background-color: #E6E6FA;*/
+  margin: 0 auto;
+}
+body{
+  margin:1%;
+  /*background-color: #373B46;*/
+  /*background-color: #C0C0C0;*/
+}
+a{
+  color:black
+}
+a:hover{
+  color: #FF4500;
+}
+img{
+  max-width: 120px
 }
