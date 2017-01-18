@@ -15,11 +15,11 @@ const CounterApp = require('./components/counter-app')
 
 // model -> state
 
-// reducer (state, action) :: -> state  
+// reducer (state, action) :: -> state
 //const initialState = 0
 const initialState = {
   products: {
-    1: {id: 1, name: 'banana', stock: 2, price:2} 
+    1: {id: 1, name: 'banana', stock: 2, price:2}
   },
 
   cart:  {
@@ -36,14 +36,14 @@ const store = createStore(reducer, initialState)
 // store.subscribe
 
 // store .getState -> state
-console.log('store', store)
-console.log('state', store.getState())
+console.log('src/index.js store', store)
+console.log('src/index.js state', store.getState())
 
 document.addEventListener('DOMContentLoaded', (e) => {
 
   store.subscribe(() => {
     const state = store.getState()
-    console.log('state', state)
+    console.log('src/index.js store.subscribe() state', state)
     render(state)
   })
 
@@ -58,27 +58,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   render(store.getState())
 
-
-
-
-
-  //store.fetchCats()
-
-
 })
-
-
-
-
-
-function counterReducer (state, action) {
-  console.log('reducer', state, action)
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default: // must have default
-      return state
-  }
-}
