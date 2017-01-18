@@ -1,9 +1,8 @@
 const React = require('react')
 const _ = require('lodash')
-
+const ListProjects = require('./listProjects')
 //components
-// const ProductRow = require('./product-row')
-// const CartRow = require('./cart-row')
+
 
 
 module.exports = function App (props) {
@@ -39,11 +38,7 @@ console.log('app.js projects: ',projects)
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><a className="link" href="#">Project Number</a></td>
-              <td><a className="link" href="#">Project Name</a></td>
-              <td>Important Notices</td>
-            </tr>
+            {projects.map((projectData)=><ListProjects projectData = {projectData} store = {store}/>)}
           </tbody>
         </table>
       </div>

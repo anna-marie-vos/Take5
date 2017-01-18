@@ -6,7 +6,7 @@ const reducer = require('./reducer')
 
 // components
 const App = require('./components/app')
-const CounterApp = require('./components/counter-app')
+
 
 //initialState
 const initialState = {
@@ -16,7 +16,7 @@ const initialState = {
       project_name: 'Aurecon Offices',
       location:'Level 8, 1 Willis street,',
       SWMS:'Not available at present',
-      important_Notices:''
+      important_Notices:'No notices'
     },
     {project_id: 2,
       project_number:'345221',
