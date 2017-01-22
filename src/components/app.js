@@ -7,13 +7,16 @@ const Header = require('./header')
 
 
 module.exports = function App (props) {
-  console.log('app.js props', props)
+  // console.log('app.js props', props)
   const {state, store} = props
-  const {PPEGear, projects} = state
+  const {PPEGear, projects,specificProject} = state
   const {project_id, project_number, project_name , important_Notices} = projects
 
 //use object keys to map data
 const projKeysArray = objectKeys(projects)
+
+// add the string 'details' to the array to insert details into the table
+projKeysArray.splice(specificProject.project_id,0,'details')
 
   return (
     <div className="row">
@@ -31,10 +34,20 @@ const projKeysArray = objectKeys(projects)
             </tr>
           </thead>
           <tbody>
-            {projKeysArray.map((id)=>
-              <ListProjects projectData = {projects[id]}
-              store = {store}/>)
-            }
+            {projKeysArray.map((id,index)=>{
+              if(id === 'details'&& index != 0){
+                return (
+                  <ProjectData data = {specificProject} />
+                )
+              } else if(id === 'details'&& index === 0){
+                return
+              }
+              else{
+                return (<ListProjects projectData = {projects[id]}
+                store = {store}/>)
+              }
+            })
+          }
           </tbody>
         </table>
       </div>
@@ -42,6 +55,7 @@ const projKeysArray = objectKeys(projects)
   )
 }
 
+//object keys mapping function
 function objectKeys(obj){
   const arr = Object.keys(obj)
     return arr.map(key =>{return Number(key)})

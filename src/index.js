@@ -39,7 +39,9 @@ const initialState = {
       ppe_name: 'high vis yellow vest',
       ppe_image:'https://images-na.ssl-images-amazon.com/images/I/41TZhfvh-yL.jpg'
     }
-  }
+  },
+  specificProject: {},
+  clickedProject: false
 }
 
 
