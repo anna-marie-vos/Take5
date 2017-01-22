@@ -2,17 +2,18 @@ const React = require('react')
 const _ = require('lodash')
 const ListProjects = require('./listProjects')
 //components
+const ProjectData = require('./projectData')
 
 
 
 module.exports = function App (props) {
   console.log('app.js props', props)
-  // console.log('app.js state', props.store.getState())
   const {state, store} = props
   const {PPEGear, projects} = state
   const {project_id, project_number, project_name , important_Notices} = projects
 
-console.log('app.js projects: ',projects)
+//use object keys to map data
+const projKeysArray = objectKeys(projects)
 
   return (
     <div className="row">
@@ -38,11 +39,19 @@ console.log('app.js projects: ',projects)
             </tr>
           </thead>
           <tbody>
-            {projects.map((projectData)=><ListProjects projectData = {projectData} store = {store}/>)}
+            {projKeysArray.map((id)=>
+              <ListProjects projectData = {projects[id]}
+              store = {store}/>)
+            }
           </tbody>
         </table>
       </div>
 
     </div>
   )
+}
+
+function objectKeys(obj){
+  const arr = Object.keys(obj)
+    return arr.map(key =>{return Number(key)})
 }
