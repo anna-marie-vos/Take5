@@ -1,9 +1,9 @@
 const React = require('react')
 const _ = require('lodash')
-const ListProjects = require('./listProjects')
 //components
+const ListProjects = require('./listProjects')
 const ProjectData = require('./projectData')
-
+const Header = require('./header')
 
 
 module.exports = function App (props) {
@@ -17,15 +17,7 @@ const projKeysArray = objectKeys(projects)
 
   return (
     <div className="row">
-      <header className="pageTitle">
-        <h1 className="Title">
-          Take5: Hazard Identification Checklist
-        </h1>
-        <nav className="row">
-            <button className="button" href="#">New project</button>
-            <button className="button" href="#">List all PPE gear</button>
-        </nav>
-      </header>
+      <Header />
       <div className ="row">
         <h2>
           Notice Board
@@ -46,7 +38,6 @@ const projKeysArray = objectKeys(projects)
           </tbody>
         </table>
       </div>
-
     </div>
   )
 }
