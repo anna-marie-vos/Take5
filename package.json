@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "knex": "knex",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www",
     "test": "ava test/**/*.js --serial --verbose",
