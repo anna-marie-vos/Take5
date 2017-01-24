@@ -28,7 +28,7 @@ module.exports = function (db) {
       __dirname + "/public",
       __dirname + "/src",
     ])
-    
+
     app.use(require('inject-lr-script')())
 
     app.use(webpackDevMiddleware(compiler, {
@@ -42,7 +42,7 @@ module.exports = function (db) {
   app.use('/', express.static(path.join(__dirname, 'public')))
 
   // routes
-  app.use('/api/v1/data', api.myRoute(db))
+  app.use('/api/v1/take5', api.take5Routes(db))
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {

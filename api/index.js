@@ -1,7 +1,5 @@
-const myRoute = require('./a-resource')
+const take5Routes = require('./take5Routes')
 
 module.exports = {
-  myRoute
+  take5Routes
 }
-
-

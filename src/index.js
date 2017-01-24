@@ -3,6 +3,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const { createStore } = require('redux')
 const reducer = require('./reducer')
+const request = require('superagent')
 
 const Router = require('react-router').Router
 const Route = require('react-router').Route
@@ -14,22 +15,7 @@ const App = require('./components/app')
 
 //initialState
 const initialState = {
-  projects: {
-   1: {project_id: 1,
-      project_number:'122433',
-      project_name: 'Aurecon Offices',
-      location:'Level 8, 1 Willis street,',
-      SWMS:'Not available at present',
-      important_Notices:'No notices'
-    },
-  2: {project_id: 2,
-      project_number:'345221',
-      project_name: 'Chorus exchange',
-      location:'wellington, 3 thorndon street',
-      SWMS:'available, link required',
-      important_Notices:'Only wooden ladders allowed on site'
-    }
-  },
+  projects: {},
   PPEGear: {
     1: {ppe_id: 1,
       ppe_name: 'Safety Boots',
@@ -58,6 +44,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
     render(state)
   })
 
+  request.get('/api/v1/take5', (err, res) => {
+    store.dispatch({type: 'UPDATE_PROJECTS_INFO', payload: res.body})
+  })
 
   function render (state) {
     const root = document.querySelector('#app')
