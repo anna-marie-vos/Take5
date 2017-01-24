@@ -43,7 +43,7 @@ module.exports = function (db) {
 
   // routes
   app.use('/api/v1/projects', api.projectsRoute(db))
-  // app.use('/api/v1/ppeGear', api.ppeGearRoute(db))
+  // app.use('/api/v1/projects_ppe', api.projectsPPEgearRoute(db))
 
 
   // catch 404 and forward to error handler

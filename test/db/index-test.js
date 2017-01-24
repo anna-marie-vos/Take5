@@ -155,6 +155,7 @@ const expected = [
       ppe_image:"http://img.directindustry.com/images_di/photo-g/60721-2451487.jpg"
     }
   ]
+
  //act
    return db.getProjectAndPPEData(indexTable)
    .then(function(data){

@@ -7,7 +7,7 @@ module.exports = function(db) {
   route.post("/", post);
 
   function get(req, res, next) {
-    db.getPpeGearData()
+    db.getProjectAndPPEData('projects_ppe')
     .then(data =>{
       res.json({'data': data});
     })
