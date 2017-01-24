@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     render(state)
   })
 
-  request.get('/api/v1/take5', (err, res) => {
+  request.get('/api/v1/projects', (err, res) => {
     store.dispatch({type: 'UPDATE_PROJECTS_INFO', payload: res.body})
   })
 

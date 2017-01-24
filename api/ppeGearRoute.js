@@ -2,12 +2,12 @@ const express = require("express");
 const route = express.Router();
 
 module.exports = function(db) {
-  // GET api/v1/take5/
+  // GET /api/v1/ppeGear
   route.get("/", get);
   route.post("/", post);
 
   function get(req, res, next) {
-    db.listAllProjects()
+    db.getPpeGearData()
     .then(data =>{
       res.json({'data': data});
     })

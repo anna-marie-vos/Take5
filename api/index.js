@@ -1,5 +1,5 @@
-const take5Routes = require('./take5Routes')
+const projectsRoute = require('./projectsRoute')
 
 module.exports = {
-  take5Routes
+  projectsRoute
 }

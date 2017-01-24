@@ -42,7 +42,9 @@ module.exports = function (db) {
   app.use('/', express.static(path.join(__dirname, 'public')))
 
   // routes
-  app.use('/api/v1/take5', api.take5Routes(db))
+  app.use('/api/v1/projects', api.projectsRoute(db))
+  // app.use('/api/v1/ppeGear', api.ppeGearRoute(db))
+
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
