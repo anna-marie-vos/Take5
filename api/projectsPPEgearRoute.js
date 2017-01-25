@@ -2,9 +2,10 @@ const express = require("express");
 const route = express.Router();
 
 module.exports = function(db) {
-  // GET /api/v1/ppeGear
+  // GET /api/v1/projects_ppe
   route.get("/", get);
   route.post("/", post);
+    // route.get("/:id", getPPEByProject);
 
   function get(req, res, next) {
     db.getProjectAndPPEData('projects_ppe')
