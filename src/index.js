@@ -18,6 +18,7 @@ const initialState = require('../state')
 const App = require('./components/app')
 const Shop = require('./components/shop')
 const Checkout = require('./components/checkout')
+const ListProjects = require('./components/listProjects')
 
 const store = createStore(reducer, initialState)
 
@@ -46,7 +47,7 @@ const Root = ({store}) => {
     <MuiThemeProvider>
       <Provider store={store} >
         <Router history={hashHistory} >
-          <Route path="/" component={App} store={store}>
+          <Route path="/" component={ListProjects} store={store}>
             <IndexRoute component={Shop} />
             <Route path="checkout" component={Checkout} />
           </Route>
