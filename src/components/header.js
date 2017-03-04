@@ -1,7 +1,10 @@
+const debug = require('debug')('components:header')
 const React = require('react')
 const _ = require('lodash')
 
 module.exports = function header(props){
+  debug({props})
+
   return (
       <header className="pageTitle">
         <h1 className="Title">

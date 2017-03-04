@@ -17,39 +17,19 @@ const initialState = require('../state')
 // top level components
 const App = require('./components/app')
 const Shop = require('./components/shop')
-const Checkout = require('./components/checkout')
 const ListProjects = require('./components/listProjects')
+const ProjectData = require('./components/projectData')
 
 const store = createStore(reducer, initialState)
 
-
-//initialState
-// const initialState = {
-//   projects: {},
-//   PPEGear: {
-//     1: {ppe_id: 1,
-//       ppe_name: 'Safety Boots',
-//       ppe_image:'http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff'
-//     },
-//     2: {ppe_id: 2,
-//       ppe_name: 'high vis yellow vest',
-//       ppe_image:'https://images-na.ssl-images-amazon.com/images/I/41TZhfvh-yL.jpg'
-//     }
-//   },
-//   specificProject: {},
-//   clickedProject: false
-// }
-
-
-// destructuring in the arguments!!!!
 const Root = ({store}) => {
   return (
     <MuiThemeProvider>
       <Provider store={store} >
         <Router history={hashHistory} >
-          <Route path="/" component={ListProjects} store={store}>
-            <IndexRoute component={Shop} />
-            <Route path="checkout" component={Checkout} />
+          <Route path="/" component={App} store={store}>
+            <IndexRoute component={ListProjects} />
+            <Route path="/projects/:id" component={ProjectData} />
           </Route>
         </Router>
       </Provider>
