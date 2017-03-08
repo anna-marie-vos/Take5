@@ -7,33 +7,12 @@ module.exports = function (state, action) {
 
   switch(action.type){
 
-    case 'UPDATE_PROJECTS_INFO':
-      newState.projects = idAssigner(action.payload.data)
+    case 'LIST_PROJECTS':
+      newState.projects = action.payload
       return newState
 
-    case 'PROJECT_DETAILS':
-      const projId = action.payload
-      if(newState.clickedProject===true){
-        newState.clickedProject = false
-        newState.specificProject ={}
-      } else{
-        newState.clickedProject = true
-        newState.specificProject = state.projects[projId]
-      }
-      return newState
-
-    case 'NEXT_SWITCH_HERE':
-      return newState
 
     default:
       return newState
   }
-}
-
-function idAssigner(arrOfObjects){
-  const obj = {}
-    arrOfObjects.map(oneObject =>{
-      obj[oneObject.project_id]= oneObject
-    })
-  return obj
 }

@@ -9,7 +9,7 @@ module.exports = function(db) {
   function get(req, res, next) {
     db.getTableData('projects')
     .then(data =>{
-      res.json({'data': data});
+      res.json({'projects': data});
     })
     // db.get()
   }

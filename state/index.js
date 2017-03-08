@@ -1,5 +1,5 @@
 module.exports = {
-  projects: {},
+  projects: [],
   PPEGear: {
     1: {ppe_id: 1,
       ppe_name: 'Safety Boots',
