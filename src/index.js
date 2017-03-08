@@ -16,7 +16,6 @@ const initialState = require('../state')
 
 // top level components
 const App = require('./components/app')
-const Shop = require('./components/shop')
 const ListProjects = require('./components/listProjects')
 const ProjectData = require('./components/projectData')
 

@@ -1,5 +1,5 @@
 const test = require('ava')
-const seedProjects = require('../../db/seed-projects')
+// const seedProjects = require('../../db/seed-projects')
 
 // instantiate test database and routes
 const testKnex = require('knex')(require('../../knexfile').test)
