@@ -42,7 +42,7 @@ module.exports = function (db) {
   app.use('/', express.static(path.join(__dirname, 'public')))
 
   // routes
-  app.use('/api/v1/projects', api.projectsRoute(db))
+  app.use('/api/v1', api.projectsRoute(db))
   // app.use('/api/v1/projects_ppe', api.projectsPPEgearRoute(db))
 
 
