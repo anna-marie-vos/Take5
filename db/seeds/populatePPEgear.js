@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('ppeGear').insert({ppe_id: 1,
               ppe_name: 'Safety Boots',
-              ppe_image:'http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff'
+              ppe_image:'http://s7g3.scene7.com/is/image//ae235?src=ae235/59707_P&$prodImageMedium$'
             }),
         knex('ppeGear').insert({ppe_id: 2,
               ppe_name: 'high vis yellow vest',
