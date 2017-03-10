@@ -5,11 +5,11 @@ const request = require('superagent')
 const ListProjectPpe = require('./listProjectPpe')
 
 const projectInfo = (props) => {
-  console.log('projectInfo, ', props);
+  // console.log('projectInfo, ', props);
   const { ppe , project } = props
   const {project_number, project_name, project_id,
     location, SWMS, important_Notices} = project
-    
+
   return (
     <div className="row">
       <article>
