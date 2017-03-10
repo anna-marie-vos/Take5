@@ -11,6 +11,9 @@ module.exports = function (state, action) {
       newState.projects = action.payload
       return newState
 
+    case 'CURRENT_PROJECT':
+      newState.currentProject = action.payload
+      return newState
 
     default:
       return newState

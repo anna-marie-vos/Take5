@@ -4,6 +4,18 @@ const { connect } = require('react-redux')
 
 class ProjectData extends React.Component {
 
+  componentDidMount(){
+    // console.log('projectData, ',this.props);
+    const dispatch = this.props.dispatch
+    const project_id = this.props.params.id
+    request.get(`api/v1/project/${project_id}`)
+    .end((err,res)=>{
+      if (err) return console.log('error', err)
+      dispatch({type:'CURRENT_PROJECT', payload:res.body})
+    })
+
+  }
+
   render(){
     return (
       <div className="row">
