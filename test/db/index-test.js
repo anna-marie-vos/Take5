@@ -60,7 +60,6 @@ const expected = [
 test('Test2: returns ppegear and projects joined data', (t) => {
  t.plan(1)
  // arrange
-const indexTable = 'projects_ppe'
 
 const expected = [
     {Proj_ppe_id:1,
@@ -157,9 +156,58 @@ const expected = [
   ]
 
  //act
-   return db.getProjectAndPPEData(indexTable)
+   return db.getProjectAndPPEData()
    .then(function(data){
      //Assert
      t.deepEqual(data,expected,'test 2 get data from 2 tables and sends only the data from 1 id')
+   })
+})
+
+test('Test3: returns only the proj name, id, number of all projects', (t) => {
+ t.plan(1)
+ // arrange
+  const expected = [
+    { project_id: 1, project_number: 122433, project_name: 'Aurecon Offices'},
+    { project_id: 2, project_number: 345221, project_name: 'Chorus exchange' },
+    { project_id: 3, project_number: 253423, project_name: 'GCNZ' }
+  ]
+ //act
+   return db.getAllProjects()
+   .then(function(data){
+    //  console.log('getAllProjects, ', data);
+     //Assert
+     t.deepEqual(data, expected,'test 3 get proj name, id, number of all projects')
+   })
+})
+
+test.only('Test4: returns project info and PPE by id', (t) => {
+ t.plan(1)
+ // arrange
+ const id = '2'
+  const expected = {
+    project: { project_id: 2,
+     project_number: 345221,
+     project_name: 'Chorus exchange',
+     location: 'wellington, 3 thorndon street',
+     SWMS: 'available, link required',
+     important_Notices: 'Only wooden ladders allowed on site' },
+  ppe: [ { ppe_id: 1,
+       ppe_name: 'Safety Boots',
+       ppe_image: 'http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff' },
+     { ppe_id: 2,
+       ppe_name: 'high vis yellow vest',
+       ppe_image: 'https://images-na.ssl-images-amazon.com/images/I/41TZhfvh-yL.jpg' },
+     { ppe_id: 3,
+       ppe_name: 'hard hat',
+       ppe_image: 'http://multimedia.3m.com/mws/media/794051J/3mtm-hard-hat-vented-white-4-point-ratchet-suspension-h-701v.jpg' }
+     ]
+   }
+
+ //act
+  return db.getProjectAndPpeById(id)
+   .then(function(data){
+    //  console.log('getProjectAndPpeById, ', data);
+     //Assert
+     t.deepEqual(data, expected,'test 4 get proj name, id, number of all projects')
    })
 })
