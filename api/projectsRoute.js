@@ -8,17 +8,16 @@ module.exports = function(db) {
   route.post("/", post);
 
   function getAllProjects(req, res, next) {
-    db.getTableData('projects')
+    db.getAllProjects('projects')
     .then(data =>{
       res.json({'projects': data});
     })
   }
 
   function getCurrentProject(req, res, next) {
-    console.log('req.', req.params.id);
-    db.getTableData('projects')
-    .then(data =>{
-      res.json({'projects': data});
+    db.getProjectAndPpeById(req.params.id)
+    .then(projData =>{
+      res.json(projData);
     })
   }
 

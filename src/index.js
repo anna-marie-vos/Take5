@@ -15,9 +15,9 @@ const reducer = require('./reducer')
 const initialState = require('../state')
 
 // top level components
-const App = require('./components/app')
-const ListProjects = require('./components/listProjects')
-const ProjectData = require('./components/projectData')
+const App = require('./containers/app')
+const ListProjects = require('./containers/listProjects')
+const ProjectData = require('./containers/projectData')
 
 const store = createStore(reducer, initialState)
 

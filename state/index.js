@@ -1,6 +1,8 @@
 module.exports = {
   projects: [],
   PPEGear: {},
-  currentProject: {},
+  currentProject: {ppe:[0],
+    project:{ }
+  },
   clickedProject: false
 }
