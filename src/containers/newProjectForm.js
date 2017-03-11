@@ -32,6 +32,15 @@ class NewProjectForm extends React.Component {
     const inputs = this.refs
     console.log('this.refs[1].value, ',this.refs[1].checked);
     console.log('this.refs[2].value, ',this.refs[2].checked);
+    const projectInfo = {}
+    const ppeGear = []
+    
+    projectInfo.project_number = this.refs.project_number
+    projectInfo.project_name = this.refs.project_name
+    projectInfo.location = this.refs.location
+    projectInfo.SWMS = this.refs.SWMS
+    projectInfo.important_Notices = this.refs.notices
+
   }
 
 
