@@ -17,6 +17,7 @@ const initialState = require('../state')
 // top level components
 const App = require('./containers/app')
 const ListProjects = require('./containers/listProjects')
+const ListPpe = require('./containers/listPPE')
 const ProjectData = require('./containers/projectData')
 
 const store = createStore(reducer, initialState)
@@ -29,6 +30,7 @@ const Root = ({store}) => {
           <Route path="/" component={App} store={store}>
             <IndexRoute component={ListProjects} />
             <Route path="/projects/:id" component={ProjectData} />
+            <Route path="/ppe" component={ListPpe} />
           </Route>
         </Router>
       </Provider>

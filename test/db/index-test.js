@@ -73,7 +73,7 @@ const expected = [
       important_Notices:"",
       ppe_id:1,
       ppe_name:"Safety Boots",
-      ppe_image:"http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff"
+      ppe_image:"http://s7g3.scene7.com/is/image//ae235?src=ae235/59707_P&$prodImageMedium$"
     },
     {Proj_ppe_id:2,
       proj_id:"2",
@@ -86,7 +86,7 @@ const expected = [
       important_Notices:"Only wooden ladders allowed on site",
       ppe_id:1,
       ppe_name:"Safety Boots",
-      ppe_image:"http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff"
+      ppe_image:"http://s7g3.scene7.com/is/image//ae235?src=ae235/59707_P&$prodImageMedium$"
     },
     {Proj_ppe_id:3,
       proj_id:"3",
@@ -99,7 +99,7 @@ const expected = [
       important_Notices:"no personnel allowed on level 2 & 3",
       ppe_id:1,
       ppe_name:"Safety Boots",
-      ppe_image:"http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff"
+      ppe_image:"http://s7g3.scene7.com/is/image//ae235?src=ae235/59707_P&$prodImageMedium$"
     },
     {Proj_ppe_id:4,
       proj_id:"2",
@@ -180,7 +180,7 @@ test('Test3: returns only the proj name, id, number of all projects', (t) => {
    })
 })
 
-test.only('Test4: returns project info and PPE by id', (t) => {
+test('Test4: returns project info and PPE by id', (t) => {
  t.plan(1)
  // arrange
  const id = '2'
@@ -193,7 +193,7 @@ test.only('Test4: returns project info and PPE by id', (t) => {
      important_Notices: 'Only wooden ladders allowed on site' },
   ppe: [ { ppe_id: 1,
        ppe_name: 'Safety Boots',
-       ppe_image: 'http://www.activesafety.co.nz/media/22445/bestboy-sfo5lu-1.jpg?width=500&heightratio=1&bgcolor=fff' },
+       ppe_image: 'http://s7g3.scene7.com/is/image//ae235?src=ae235/59707_P&$prodImageMedium$' },
      { ppe_id: 2,
        ppe_name: 'high vis yellow vest',
        ppe_image: 'https://images-na.ssl-images-amazon.com/images/I/41TZhfvh-yL.jpg' },
