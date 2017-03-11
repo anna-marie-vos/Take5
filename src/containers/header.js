@@ -14,7 +14,7 @@ module.exports = function header(props){
         <nav className="row">
         <Link to="/" className="button">List Projects</Link>
           <Link to="/ppe" className="button">PPE gear List</Link>
-          <button className="button" href="#">New project</button>
+          <Link to="/newProject" className="button" href="#">New project</Link>
           <button className="button" href="#">Edit Project</button>
           <button className="button" href="#">Project Hazard Log</button>
           <button className="button" href="#">Delete Project</button>

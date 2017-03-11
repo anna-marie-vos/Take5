@@ -19,6 +19,7 @@ const App = require('./containers/app')
 const ListProjects = require('./containers/listProjects')
 const ListPpe = require('./containers/listPPE')
 const ProjectData = require('./containers/projectData')
+const NewProjectForm = require('./containers/newProjectForm')
 
 const store = createStore(reducer, initialState)
 
@@ -31,6 +32,7 @@ const Root = ({store}) => {
             <IndexRoute component={ListProjects} />
             <Route path="/projects/:id" component={ProjectData} />
             <Route path="/ppe" component={ListPpe} />
+            <Route path="/newProject" component={NewProjectForm} />
           </Route>
         </Router>
       </Provider>
