@@ -1,6 +1,6 @@
 module.exports = {
   projects: [],
-  PPEGear: {},
+  PPEGear: [],
   currentProject: {ppe:[],
     project:{}
   },

@@ -15,6 +15,10 @@ module.exports = function (state, action) {
       newState.currentProject = action.payload
       return newState
 
+    case 'LIST_PPE':
+      newState.PPEGear = action.payload
+      return newState
+
     default:
       return newState
   }

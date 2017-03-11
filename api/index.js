@@ -1,6 +1,6 @@
 const projectsRoute = require('./projectsRoute')
-const projectsPPEgearRoute = require('./projectsPPEgearRoute')
+const ppeRoutes = require('./ppeRoutes')
 module.exports = {
   projectsRoute,
-  projectsPPEgearRoute
+  ppeRoutes
 }

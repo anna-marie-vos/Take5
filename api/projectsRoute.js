@@ -3,8 +3,8 @@ const route = express.Router();
 
 module.exports = function(db) {
   // GET api/v1/
-  route.get("/projects", getAllProjects);
-  route.get("/project/:id", getCurrentProject);
+  route.get("/", getAllProjects);
+  route.get("/:id", getCurrentProject);
   route.post("/", post);
 
   function getAllProjects(req, res, next) {
